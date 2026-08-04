@@ -1,0 +1,22 @@
+name: Basic CI Pipeline
+on:
+  push:
+  workflow_dispatch:
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      env:
+        PROJECT: GitHub Actions Demo
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+        - name: Print Project Name
+          run: echo $PROJECT
+        - name: Show Current Directory
+          run: pwd
+        - name: List Files
+          run: ls -la
+        - name: Display Date
+          run: date
+        - name: Finish
+          run: echo "Workflow Completed Successfully"
